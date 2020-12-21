@@ -9,7 +9,6 @@
 | 18120659 | Đặng Thị Hồng Xuyên | 18120568@student.hcmus.edu.vn |
 | 18120026 | Phan Gia Hân        | 18120568@student.hcmus.edu.vn |
 | 18120604 | Phạm Thị Bích Trâm  | 18120568@student.hcmus.edu.vn |
-|:--------:|:-------------------:|:-----------------------------:|
 
 # Framework:
 - Frontend: Bootstrap.
