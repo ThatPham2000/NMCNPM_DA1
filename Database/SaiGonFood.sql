@@ -30,7 +30,7 @@ CREATE TABLE `comments` (
   PRIMARY KEY (`ID`),
   KEY `IDDish` (`IDDish`),
   CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`IDDish`) REFERENCES `dishes` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -59,7 +59,7 @@ CREATE TABLE `dishes` (
   PRIMARY KEY (`ID`),
   KEY `IDRestaurant` (`IDRestaurant`),
   CONSTRAINT `dishes_ibfk_1` FOREIGN KEY (`IDRestaurant`) REFERENCES `restaurants` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `favoritedish` (
   KEY `IDDish` (`IDDish`),
   CONSTRAINT `favoritedish_ibfk_1` FOREIGN KEY (`IDUser`) REFERENCES `users` (`ID`),
   CONSTRAINT `favoritedish_ibfk_2` FOREIGN KEY (`IDDish`) REFERENCES `dishes` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +111,7 @@ CREATE TABLE `favoriterestaurant` (
   KEY `IDRestaurant` (`IDRestaurant`),
   CONSTRAINT `favoriterestaurant_ibfk_1` FOREIGN KEY (`IDRestaurant`) REFERENCES `restaurants` (`ID`),
   CONSTRAINT `favoriterestaurant_ibfk_2` FOREIGN KEY (`IDUser`) REFERENCES `users` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,7 +138,7 @@ CREATE TABLE `ratingdish` (
   KEY `IDDish` (`IDDish`),
   CONSTRAINT `ratingdish_ibfk_1` FOREIGN KEY (`IDDish`) REFERENCES `dishes` (`ID`),
   CONSTRAINT `ratingdish_ibfk_2` FOREIGN KEY (`IDUser`) REFERENCES `users` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +165,7 @@ CREATE TABLE `ratingrestaurant` (
   KEY `IDRestaurant` (`IDRestaurant`),
   CONSTRAINT `ratingrestaurant_ibfk_1` FOREIGN KEY (`IDUser`) REFERENCES `users` (`ID`),
   CONSTRAINT `ratingrestaurant_ibfk_2` FOREIGN KEY (`IDRestaurant`) REFERENCES `restaurants` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -196,7 +196,7 @@ CREATE TABLE `restaurants` (
   PRIMARY KEY (`ID`),
   KEY `IDChuQuan` (`IDChuQuan`),
   CONSTRAINT `restaurants_ibfk_1` FOREIGN KEY (`IDChuQuan`) REFERENCES `users` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -219,12 +219,22 @@ CREATE TABLE `review` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `IDUser` int NOT NULL,
   `Image` varchar(100) NOT NULL,
+  `Address` varchar(200) NOT NULL COLLATE utf8_unicode_ci ,
+  `Typefood` varchar(100) NOT NULL COLLATE utf8_unicode_ci ,
   `Content` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `IDUser` (`IDUser`),
   CONSTRAINT `review_ibfk_1` FOREIGN KEY (`IDUser`) REFERENCES `users` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+BEGIN;
+
+INSERT INTO `review` VALUES (1, 1,jpg,'Học lập trình C#','Phát triển web.','vhgvhgvh');
+INSERT INTO `review` VALUES (2, 1,jpg,'Học lập trình D','Phát triển web ','Hiểu kiến ​​thức cơ bản về lập trình ');
+INSERT INTO `review` VALUES (3, 1,jpg,'Học lập trình E','Phát triển web l','Những gì bạn sẽ học');
+INSERT INTO `review` VALUES (4, 1,jpg,'Học lập trình H','Phát triển web h.',' Hiểu kiến ​​thức cơ bản về lập trình ');
+COMMIT;
 
 --
 -- Dumping data for table `review`
@@ -247,7 +257,7 @@ CREATE TABLE `userrefreshtoken` (
   `Status` int NOT NULL,
   PRIMARY KEY (`IDUser`),
   CONSTRAINT `userrefreshtoken_ibfk_1` FOREIGN KEY (`IDUser`) REFERENCES `users` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -274,8 +284,12 @@ CREATE TABLE `users` (
   `TypeUser` int NOT NULL,
   `Permission` int NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+BEGIN;
+
+INSERT INTO `users` VALUES (1,1,1,1,1,1);
+COMMIT;
 
 --
 -- Dumping data for table `users`
