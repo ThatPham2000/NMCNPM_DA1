@@ -93,7 +93,7 @@ header {
   background: transparent;
   z-index: 999999; }
   @media (max-width: 991px) {
-    header a.button-one {
+    header .button-one {
       display: none; } }
 
 .navbar {
@@ -352,7 +352,7 @@ body {
   #home-section .persephone .tp-bullet:hover, #home-section .persephone .tp-bullet.selected {
     background: #fff; }
 
-a.button-one {
+.button-one {
   color: #23292c;
   font-size: 18px;
   padding: 10px 35px;
@@ -364,11 +364,11 @@ a.button-one {
   -o-transition: all 0.2s ease-in-out;
   margin: 0 10px; 
   }
-  a.button-one:hover {
+  .button-one:hover {
     color: #ffffff;
     background: #ea462b; }
 
-a.button-two {
+.button-two {
   color: #ffffff;
   font-size: 18px;
   padding: 10px 35px;
@@ -379,7 +379,7 @@ a.button-two {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   margin: 0; }
-  a.button-two:hover {
+  .button-two:hover {
     color: #ea462b;
     background: #ffffff; }
 
@@ -1979,7 +1979,9 @@ section.contact-section .contact-info p {
 
 #contact-form,
 #reservation-form {
-  margin: 0; }
+  margin: 0; 
+align-items: center;
+text-align: center;}
   #contact-form label,
   #reservation-form label {
     display: block;
@@ -1992,7 +1994,7 @@ section.contact-section .contact-info p {
   #contact-form textarea,
   #reservation-form input[type="text"],
   #reservation-form textarea {
-    width: 100%;
+    width: 50%;
     padding: 10px 20px;
     background: transparent;
     color: #777777;
@@ -2015,6 +2017,35 @@ section.contact-section .contact-info p {
   #reservation-form input[type="text"]:focus,
   #reservation-form textarea:focus {
     border: 1px solid #ea462b; }
+
+    #contact-form input[type="password"],
+    #contact-form textarea,
+    #reservation-form input[type="password"],
+    #reservation-form textarea {
+      width: 50%;
+      padding: 10px 20px;
+      background: transparent;
+      color: #777777;
+      font-family: "Lato", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      outline: none;
+      border: 1px solid #e1e1e1;
+      margin: 0 0 20px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      -ms-border-radius: 0px;
+      border-radius: 0px;
+      transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out; }
+    #contact-form input[type="password"]:focus,
+    #contact-form textarea:focus,
+    #reservation-form input[type="password"]:focus,
+    #reservation-form textarea:focus {
+      border: 1px solid #ea462b; }
+
   #contact-form textarea,
   #reservation-form textarea {
     height: 100px;
@@ -2313,4 +2344,8 @@ footer {
   margin-left: 10px;
   border: 0.5px solid #212121;
   border-radius: 5px;
+}
+
+button{
+  border: none;
 }
