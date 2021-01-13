@@ -27,25 +27,25 @@
                 <h2>Đăng ký</h2>
                 <span>Tham gia ngay với chúng tôi để trải nghiệm nhiều tính năng với chất lượng tốt nhất</span>
             </div>
-            <form id="reservation-form">
+            <form id="reservation-form" action="/users/register" method="POST">
                 <div class="">
                     <label for="account">Tài khoản</label>
-                    <input class="input_login" name="account" id="account" type="text" placeholder="Tên đăng nhập">
+                    <input name="account" id="account" type="text" placeholder="Tên đăng nhập">
                 </div>
 
                 <div class="">
                     <label for="password">Mật khẩu</label>
-                    <input class="input_login" name="pass" id="pass" type="password" placeholder="Mật khẩu">
+                    <input name="pass" id="pass" type="password" placeholder="Mật khẩu">
                 </div>
 
                 <div class="">
                     <label for="password">Nhắc lại mật khẩu</label>
-                    <input class="input_login" name="pass" id="pass" type="password" placeholder="Mật khẩu">
+                    <input name="pass-repeat" id="pass" type="password" placeholder="Mật khẩu">
                 </div>
 
                 <div class="center-button">
                     <button class="button-two">Đăng ký</button>
-                    <button class="button-one">Đăng nhập</button>
+                    <a href="/users/login" class="button-one">Đăng nhập</a>
                 </div>
             </form>
         </div>

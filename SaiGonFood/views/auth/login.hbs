@@ -27,7 +27,7 @@
                 <h2>Đăng nhập</h2>
                 <span>Đăng nhập để trải nghiệm nhiều tính năng với chất lượng tốt nhất</span>
             </div>
-            <form id="reservation-form">
+            <form id="reservation-form" method="POST">
                 <div class="">
                     <label for="account">Tài khoản</label>
                     <input class="input_login" name="account" id="account" type="text" placeholder="Tên đăng nhập">
@@ -38,9 +38,11 @@
                     <input class="input_login" name="pass" id="pass" type="password" placeholder="Mật khẩu">
                 </div>
 
+                <span style="color: red;">{{error}}</span>
+
                 <div class="center-button">
                     <button class="button-two">Đăng nhập</button>
-                    <button class="button-one">Đăng ký</button>
+                    <a href="/users/register" class="button-one">Đăng ký</a>
                 </div>
             </form>
         </div>

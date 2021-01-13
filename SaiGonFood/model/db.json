@@ -1,0 +1,19 @@
+{
+  "user": [
+    {
+      "account": "abcd",
+      "pass": "1234",
+      "pass-repeat": "125"
+    },
+    {
+      "account": "abc",
+      "pass": "123",
+      "pass-repeat": "123"
+    },
+    {
+      "account": "Tien",
+      "pass": "123",
+      "pass-repeat": "123"
+    }
+  ]
+}
