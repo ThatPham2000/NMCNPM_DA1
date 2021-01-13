@@ -34,4 +34,8 @@ router.get('/single-post', function(req, res, next) {
     res.render('single-post');
 });
 
+router.get('/single-food', function(req, res, next) {
+    res.render('single-food');
+});
+
 module.exports = router;
