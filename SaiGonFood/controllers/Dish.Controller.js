@@ -8,12 +8,13 @@ db = low(adapter);
 db.defaults({ comment: [] }).write();
 
 module.exports.dish = (req, res, next) => {
-    const comment = db.get('comment').value();
-    res.render("single-food", {
-        rate: req.session.rating,
-        num_rate: req.session.num_rating,
-        comment
-    });
+  const comment = db.get('comment').value();
+  const rating = db.get('rate').value();
+  res.render("single-food", {
+    rate: rating[0].rate,
+    num_rate:rating[0].num_rate,
+    comment
+  });
 };
 
 module.exports.search = (req, res, next) => {
@@ -43,17 +44,20 @@ module.exports.getAlldish = (req, res, next) => {
     })
 }
 module.exports.rating = (req, res, next) => {
-    if (req.session.isAuth === false) {
-        res.render("auth/login", {
-            error: 'Cần login để đánh giá'
-        });
-        return;
-    }
-    var star1 = (+req.body.star) * 1.0;
-    req.session.num_rating += 1;
-    const avgRate = (req.session.rating * (req.session.num_rating - 1) + star1) / (req.session.num_rating);
-    req.session.rating = Math.round(avgRate * 100) / 100;
-    res.redirect('/single-food');
+  if (req.session.isAuth === false) {
+    res.render("auth/login", {
+      error: 'Cần login để đánh giá'
+    });
+    return;
+  }
+  const rating = db.get('rate').value();
+  var star1 = (+req.body.star) * 1.0;
+  rating[0].num_rate += 1;
+  const avgRate = (rating[0].rate * (rating[0].num_rate - 1) + star1) / (rating[0].num_rate);
+  rating[0].rate = Math.round(avgRate * 100) / 100;
+  db.get('rate').find({ id: "rate" }).assign({rate: rating[0].rate }).value();
+  db.get('rate').find({ id: "rate" }).assign({num_rate: rating[0].num_rate }).value();
+  res.redirect('/single-food');
 };
 
 module.exports.comment = (req, res, next) => {

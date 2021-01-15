@@ -72,6 +72,7 @@
       "comment": "teej"
     }
   ],
+
   "dish": [
     {
       "name": "Oakey Smokey Pizza",
@@ -135,6 +136,12 @@
       "category": "Burgers",
       "image": "/images/TheDoubleBarrelMeatFeast.jpg",
       "price": "$ 22.50"
+	}],
+  "rate": [
+    {
+      "id": "rate",
+      "rate": 4.5,
+      "num_rate": 25
     }
   ]
 }
