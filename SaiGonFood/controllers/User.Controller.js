@@ -4,17 +4,16 @@ const adapter = new FileSync("model/db.json");
 
 db = low(adapter);
 
-// Set some defaults
-db.defaults({ user: [] }).write();
-
-module.exports.login = (req, res, next) => {
+module.exports.login = async (req, res, next) => {
   const account = req.body.account;
   const password = req.body.pass;
+
   req.session.isAuth=false;
   
   const user = db.get('user').find({account: account}).value();
   console.log(user);
   req.session.authUser = user;
+
   if(!user){
     res.render("auth/login",{
       error: 'User does not exit'
@@ -32,7 +31,11 @@ module.exports.login = (req, res, next) => {
   res.redirect('/index');
 };
 
-module.exports.register = (req, res, next) => {
-  db.get("user").push(req.body).write();
-  res.render("auth/register");
+module.exports.register = async (req, res, next) => {
+  if(req.body.account !== undefined && req.body.account !== null){
+    await db.get("user").push(req.body).write();
+    res.redirect("/users/login");
+  }
+    res.render("auth/register");
 };
+

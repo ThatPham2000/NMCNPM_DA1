@@ -481,9 +481,10 @@ body {
 }
 
 .button-one {
+  
   color: #23292c;
-  font-size: 18px;
-  padding: 10px 35px;
+  font-size: 15px;
+  padding: 10px 15px;
   border: 1px solid #ea462b;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
@@ -498,9 +499,10 @@ body {
 }
 
 .button-two {
+  
   color: #ffffff;
-  font-size: 18px;
-  padding: 10px 35px;
+  font-size: 15px;
+  padding: 10px 15px;
   background: #ea462b;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
@@ -3572,6 +3574,8 @@ left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%);
 
 
 .input_form {
+  width: 200px;
+  margin-top: 15px;
   padding: 10px 20px;
   margin-left: 10px;
   border: 0.5px solid #212121;
