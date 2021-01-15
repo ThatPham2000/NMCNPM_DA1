@@ -41,6 +41,16 @@
 			$('#frmRating').off('submit').submit();
 		}
 	});
+	$('#frmComment').on('submit', function (e) {
+		const comment = $('#comment').val();
+		e.preventDefault();
+		if (comment.length === 0) {
+			alert('Vui lòng nhập bình luận!');
+		}
+		else {
+			$('#frmComment').off('submit').submit();
+		}
+	});
 </script>
 <script>
 	document.getElementById("star0").innerHTML = getStars({{ rate }});
@@ -364,7 +374,7 @@
 							</div>
 							<!-- #respond -->
 							<div class="reviews-cont">
-								<form class="reviews-form" action="/comment" method="POST">
+								<form class="reviews-form" action="/comment" method="POST" id="frmComment">
 									<div class="col-lg-12" style="padding-left:0px">
 										<div class="form-singel">
 											<textarea name="comment" id="comment" placeholder="Comment"></textarea>

@@ -54,7 +54,7 @@ app.use(session({
     //   secure: true
      }
 }));
-
+require('./middlewares/locals.mdw')(app);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/review', reviewRouter);
