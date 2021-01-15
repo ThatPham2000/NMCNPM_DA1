@@ -20,6 +20,35 @@
  17.Book section
  18.Footer
 -------------------------------------------------*/
+.reviews-cont .reviews-form .form-singel .rate-wrapper{
+  overflow: hidden;
+}
+.reviews-cont .reviews-form .form-singel .rate-label {
+  float: left;
+  color: #000;
+  margin-right: 10px;
+  margin-left: 0;
+}
+.reviews-cont .reviews-form .form-singel .rate {
+  float: left;
+  color: #cecece;
+  cursor: pointer;
+}
+.reviews-cont .reviews-form .form-singel .rate-item {
+  float: left;
+  cursor: pointer;
+  margin: 0px 3px 0px 3px;
+}
+
+.reviews-cont .reviews-form .form-singel .rate:hover,
+.reviews-cont .reviews-form .form-singel .rate.selected {
+  color: #ffc600;
+}
+
+.reviews-cont .reviews-form .form-singel .rate .rate-item:hover ~ .rate-item,
+.reviews-cont .reviews-form .form-singel .rate .rate-item.active ~ .rate-item {
+color: #cecece;
+}
 .reset-elem,
 .dropdown,
 ul.page-ban-list,
