@@ -20,6 +20,55 @@
  17.Book section
  18.Footer
 -------------------------------------------------*/
+.reviews-cont .reviews-form .form-singel {
+  padding-top: 25px;
+}
+
+.reviews-cont .reviews-form .form-singel input,
+.reviews-cont .reviews-form .form-singel textarea{
+  width: 100%;
+  height: 45px;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+.reviews-cont .reviews-form .form-singel textarea{
+  height: 160px;
+  padding-top: 20px;
+  resize: none;
+}
+
+
+
+.reviews-cont .reviews-form .form-singel .rate-wrapper{
+  overflow: hidden;
+}
+.reviews-cont .reviews-form .form-singel .rate-label {
+  float: left;
+  color: #000;
+  margin-right: 10px;
+  margin-left: 0;
+}
+.reviews-cont .reviews-form .form-singel .rate {
+  float: left;
+  color: #cecece;
+  cursor: pointer;
+}
+.reviews-cont .reviews-form .form-singel .rate-item {
+  float: left;
+  cursor: pointer;
+  margin: 0px 3px 0px 3px;
+}
+
+.reviews-cont .reviews-form .form-singel .rate:hover,
+.reviews-cont .reviews-form .form-singel .rate.selected {
+  color: #ffc600;
+}
+
+.reviews-cont .reviews-form .form-singel .rate .rate-item:hover ~ .rate-item,
+.reviews-cont .reviews-form .form-singel .rate .rate-item.active ~ .rate-item {
+color: #cecece;
+}
 .reset-elem,
 .dropdown,
 ul.page-ban-list,
@@ -432,9 +481,10 @@ body {
 }
 
 .button-one {
+  
   color: #23292c;
-  font-size: 18px;
-  padding: 10px 35px;
+  font-size: 15px;
+  padding: 10px 15px;
   border: 1px solid #ea462b;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
@@ -449,9 +499,10 @@ body {
 }
 
 .button-two {
+  
   color: #ffffff;
-  font-size: 18px;
-  padding: 10px 35px;
+  font-size: 15px;
+  padding: 10px 15px;
   background: #ea462b;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
@@ -3523,6 +3574,8 @@ left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%);
 
 
 .input_form {
+  width: 200px;
+  margin-top: 15px;
   padding: 10px 20px;
   margin-left: 10px;
   border: 0.5px solid #212121;

@@ -14,11 +14,131 @@
       "account": "Tien",
       "pass": "123",
       "pass-repeat": "123"
+    }
+  ],
+  "review": [
+    {
+      "typefood": "12",
+      "address": "Quận 1",
+      "image": "wolf_howl_silhouette_128733_1920x1080.jpg",
+      "content": "Được"
     },
     {
-      "account": "abc",
-      "pass": "",
-      "pass-repeat": ""
+      "typefood": "ngo",
+      "address": "Quận 1",
+      "image": "wolf_moon_night_150508_1920x1080.jpg",
+      "content": "Được"
+    },
+    {
+      "typefood": "1",
+      "address": "Quận 1",
+      "image": "lane_night_dark_139408_1920x1080.jpg",
+      "content": "3"
+    },
+    {
+      "typefood": "Bánh kem",
+      "address": "Hồ Chí Minh city, KTX khu B, Đhqg",
+      "image": "bananawalnutsbirthdaycake.jpg",
+      "content": "rất ngon"
+    }
+  ],
+  "comment": [
+    {
+      "account": "han",
+      "day": "15-01-2021 11:59:34",
+      "comment": "mai yeu"
+    },
+    {
+      "account": "han",
+      "day": "15-01-2021 12:01:15",
+      "comment": "qua tuyet"
+    },
+    {
+      "account": "han",
+      "day": "15-01-2021 12:03:05",
+      "comment": "efdgzgd"
+    },
+    {
+      "account": "han",
+      "day": "15-01-2021 12:05:35",
+      "comment": "besst"
+    },
+    {
+      "account": "han",
+      "day": "15-01-2021 12:07:52",
+      "comment": "teej"
+    }
+  ],
+  "dish": [
+    {
+      "name": "Oakey Smokey Pizza",
+      "description": "Tomato sauce, mozzarella, anchovies, oregano, basil",
+      "category": "Pizza",
+      "image": "/images/OakeySmokeyPizza.jpg",
+      "price": "$ 21.00"
+    },
+    {
+      "name": "White Rocotta Pizza",
+      "description": "Tomato sauce, mozzarella, anchovies, oregano, basil",
+      "category": "Pizza",
+      "image": "/images/WhiteRocottaPizza.jpg",
+      "price": "$ 24.00"
+    },
+    {
+      "name": "Original Margherita Pizza",
+      "description": "Tomato sauce, mozzarella, anchovies, oregano, basil",
+      "category": "Pizza",
+      "image": "/images/OriginalMargheritaPizza.jpg",
+      "price": "$ 22.00"
+    },
+    {
+      "name": "Spaghetti all’Amatriciana",
+      "description": "Tomato sauce, mozzarella, anchovies, oregano, basil",
+      "category": "Pasta",
+      "image": "/images/Spaghettiall’Amatriciana.jpg",
+      "price": "21$"
+    },
+    {
+      "name": "Spaghetti Carbonara",
+      "description": "Tomato sauce, mozzarella, anchovies, oregano, basil",
+      "category": "Pasta",
+      "image": "/images/SpaghettiCarbonara.jpg",
+      "price": "$ 24.00"
+    },
+    {
+      "name": "Lasagna",
+      "description": "Tomato sauce, mozzarella, anchovies, oregano, basil",
+      "category": "Pasta",
+      "image": "/images/Lasagna.jpg",
+      "price": "$ 22.00"
+    },
+    {
+      "name": "Cheese Royale Burger",
+      "description": "Tomato sauce, mozzarella, anchovies, oregano, basil",
+      "category": "Burgers",
+      "image": "/images/CheeseRoyaleBurger.jpg",
+      "price": "$ 21.00"
+    },
+    {
+      "name": "Single BBQ Chicken Burger",
+      "description": "Tomato sauce, mozzarella, anchovies, oregano, basil",
+      "category": "Burgers",
+      "image": "/images/SingleBBQChickenBurger.jpg",
+      "price": "$ 8.50"
+    },
+    {
+      "name": "The Double Barrel Meat Feast",
+      "description": "Tomato sauce, mozzarella, anchovies, oregano, basil",
+      "category": "Burgers",
+      "image": "/images/TheDoubleBarrelMeatFeast.jpg",
+      "price": "$ 22.50"
+    }
+  ],
+  "rate": [
+    {
+      "id": "rate",
+      "rate": 4.5,
+      "num_rate": 25
     }
   ]
 }

@@ -8,8 +8,11 @@ module.exports.login = async (req, res, next) => {
   const account = req.body.account;
   const password = req.body.pass;
 
-  const user = await db.get('user').find({account: account}).value();
-  res.render("auth/login");
+  req.session.isAuth=false;
+  
+  const user = db.get('user').find({account: account}).value();
+  console.log(user);
+  req.session.authUser = user;
 
   if(!user){
     res.render("auth/login",{
@@ -24,7 +27,7 @@ module.exports.login = async (req, res, next) => {
     });
     return;
   }
-  
+  req.session.isAuth=true;
   res.redirect('/index');
 };
 
@@ -35,3 +38,4 @@ module.exports.register = async (req, res, next) => {
   }
     res.render("auth/register");
 };
+

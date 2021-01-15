@@ -1,0 +1,86 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/css/fileinput.min.css">
+{{/section}}
+
+{{#section 'js'}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/fileinput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/themes/fa/theme.min.js"></script>
+<script>
+  $('#reservation-form').on('submit', function (e) {
+    const typefood = $('#typefood').val();
+    const address = $('#address').val();
+    const content = $('#content').val();    
+    const fuMain = $('#fuMain').val();
+      e.preventDefault();
+    if (typefood.length===0 ) {
+      alert('Vui lòng nhập loại món ăn');
+      return;
+    }
+    else if (typefood.length===0 ) {
+      alert('Vui lòng nhập địa chỉ quán ăn');
+      return;
+    }
+    else if (content.length===0 ) {
+      alert('Vui lòng nhập cảm nhận món ăn');
+      return;
+    }
+    else if (fuMain.length===0 ) {
+      alert('Vui lòng chọn hình ảnh món ăn');
+      return;
+    }
+    else{
+        alert('Đăng bài thành công!'); 
+        $('#reservation-form').off('submit').submit();
+      }
+  });
+</script>
+<script>
+  $('#fuMain').fileinput({
+    theme: 'fa',
+    dropZoneEnabled: false,
+    allowedFileExtensions: ['png', 'jpg', 'gif'],
+  });
+</script>
+{{/section}}
+<!-- contact-section 
+			================================================== -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-box">
+            <div class="title-section">
+                <h2>Đăng bài review</h2>
+            </div>
+            <form id="reservation-form" action="/review/postReview" method="POST" enctype="multipart/form-data">
+                <div class="form-group" >
+                    <label for="fuMain" style="margin-bottom: 0px;margin-top:20px">Hình ảnh cho món ăn</label>
+                    <input id="fuMain" name="fuMain" type="file" class="file">
+                </div>
+
+                <div  >
+                    <label for="typefood">Loại món ăn</label>
+                    <input name="typefood" id="typefood" type="text" placeholder="Loại món ăn" style="width: 100%">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Địa chỉ</label>
+                    <input name="address" id="address" type="text" placeholder="Địa chỉ" style="width: 100%">
+                </div>
+
+                <div class="form-group" >
+                    <label for="content">Cảm nhận</label>
+                    <input name="content" id="content" type="text" placeholder="Cảm nhận" style="width: 100%">
+                </div>
+
+                <div class="center-button">
+                    <button class="button-two">Đăng bài</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+<!-- End contact section -->
+
+<!-- map section -->
+<div id="map"></div>
+<!-- end map section -->
