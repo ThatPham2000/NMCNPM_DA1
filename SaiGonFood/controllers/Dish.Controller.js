@@ -23,13 +23,14 @@ module.exports.search = (req, res, next) => {
     const listDish = dishModel.list();
 
     const data = listDish.filter(function(item) {
-        return item.name === name
+        // return item.name === name
+        return (item.name.toLowerCase().indexOf(name.toLowerCase()) !== -1) || (item.name.includes(name))
     });
-    console.log(`data: ${data}`)
+    console.log(`data: ${data}`);
     if (data.length > 0) {
-        res.render('restaurant', { listDish: data })
+        res.render('restaurant', { listDish: data });
     } else {
-        res.render('restaurant', { msg: "Không tìm thấy món ăn nào!" })
+        res.render('restaurant', { msg: "Không tìm thấy món ăn nào!" });
     }
 }
 
