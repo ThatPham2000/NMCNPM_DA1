@@ -17,7 +17,10 @@ router.get('/about', function(req, res, next) {
 });
 
 router.get('/blog', function(req, res, next) {
-    res.render('blog');
+    const review = db.get('review').value();
+    res.render("blog",{
+        reviewpost: review,
+    });
 });
 
 router.get('/contact', function(req, res, next) {

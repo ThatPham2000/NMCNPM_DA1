@@ -12,6 +12,7 @@ const numeral = require('numeral');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const reviewRouter = require('./routes/review');
 
 
 
@@ -56,6 +57,7 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/review', reviewRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
