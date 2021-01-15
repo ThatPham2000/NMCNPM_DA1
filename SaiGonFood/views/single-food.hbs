@@ -1,3 +1,26 @@
+{{#section 'js'}}
+<script>
+    $('.reviews-form').on('click', '.rate-wrapper .rate .rate-item', function () {
+        var self = $(this),
+            target = self.parent('.rate');
+        target.addClass('selected');
+        target.find('.rate-item').removeClass('active');
+        self.addClass('active');
+        const star = $(this).attr('data-rate');
+		$('#txtStar').val(star);
+    });
+	 $('#frmRating').on('submit', function (e) {
+        const star = $('#txtStar').val();
+		e.preventDefault();
+        if (star === '') {
+            alert('Chọn sao!');
+        }
+		else{
+			 $('#frmRating').off('submit').submit();
+		}
+    });
+</script>
+{{/section}}
 <!-- Product page content section with custom paddings -->
 <section id="content" class="hg_section pt-80 pb-100">
 	<div class="container">
@@ -56,7 +79,7 @@
                                         <i class="fa fa-star"style="color:#FFC107"></i>
                                         <i class="fa fa-star"style="color:#FFC107"></i>
                                     </ul>
-                                    <span style="padding-left: 5px;">5(20 Reviews)</span>
+                                    <span style="padding-left: 5px;">{{rate}}({{num_rate}} Reviews)</span>
 							</div>
 							</div>
 							
@@ -260,6 +283,7 @@
 											</p>
 										</div>
 										<div class="reviews-cont">
+											<form action="/rating" id="frmRating" method="POST">
 											<div class="reviews-form">
 												<div class="form-singel">
 													<div class="rate-wrapper">
@@ -280,8 +304,9 @@
 
                                                     </div>
 												</div>
-												<button type="button" class="btn btn-dark">Đánh giá</button>
 
+												<button type="submit" class="btn btn-dark">Đánh giá</button>
+												</form>
 											</div>
 										</div>
 										<!-- #respond -->

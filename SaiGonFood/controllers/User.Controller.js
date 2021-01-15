@@ -10,7 +10,7 @@ db.defaults({ user: [] }).write();
 module.exports.login = (req, res, next) => {
   const account = req.body.account;
   const password = req.body.pass;
-
+  req.session.isAuth=false;
   const user = db.get('user').find({account: account}).value();
 
   if(!user){
@@ -26,7 +26,7 @@ module.exports.login = (req, res, next) => {
     });
     return;
   }
-  
+  req.session.isAuth=true;
   res.redirect('/index');
 };
 
