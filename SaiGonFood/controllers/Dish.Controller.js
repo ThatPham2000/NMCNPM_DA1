@@ -17,12 +17,12 @@ module.exports.dish = (req, res, next) => {
   });
 };
 module.exports.rating = (req, res, next) => {
-  // if (req.session.isAuth === false) {
-  //   res.render("auth/login", {
-  //     error: 'Cần login để đánh giá'
-  //   });
-  //   return;
-  // }
+  if (req.session.isAuth === false) {
+    res.render("auth/login", {
+      error: 'Cần login để đánh giá'
+    });
+    return;
+  }
   const rating = db.get('rate').value();
   var star1 = (+req.body.star) * 1.0;
   rating[0].num_rate += 1;
