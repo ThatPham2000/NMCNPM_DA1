@@ -14,6 +14,11 @@
       "account": "Tien",
       "pass": "123",
       "pass-repeat": "123"
+    },
+    {
+      "account": "abc",
+      "pass": "",
+      "pass-repeat": ""
     }
   ]
 }
