@@ -3,6 +3,8 @@ const router = express.Router();
 const dishController = require('../controllers/Dish.Controller');
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    req.session.rating = 4.5;
+    req.session.num_rating = 25;
     res.render('index');
 });
 
