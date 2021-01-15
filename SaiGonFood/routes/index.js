@@ -40,5 +40,7 @@ router.get('/single-post', function(req, res, next) {
 });
 
 router.get('/single-food', dishController.dish);
-router.post('/rating',dishController.rating)
+router.post('/rating',dishController.rating);
+router.get('/comment', dishController.comment);
+router.post('/comment', dishController.comment);
 module.exports = router;

@@ -11,8 +11,10 @@ module.exports.login = (req, res, next) => {
   const account = req.body.account;
   const password = req.body.pass;
   req.session.isAuth=false;
+  
   const user = db.get('user').find({account: account}).value();
-
+  console.log(user);
+  req.session.authUser = user;
   if(!user){
     res.render("auth/login",{
       error: 'User does not exit'
