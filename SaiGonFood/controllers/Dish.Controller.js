@@ -28,19 +28,20 @@ module.exports.search = (req, res, next) => {
     });
     console.log(`data: ${data}`);
     if (data.length > 0) {
-        res.render('restaurant', { listDish: data });
+        res.render('restaurant_detail', { listDish: data });
     } else {
-        res.render('restaurant', { msg: "Không tìm thấy món ăn nào!" });
+        res.render('restaurant_detail', { msg: "Không tìm thấy món ăn nào!" });
     }
 }
 
 module.exports.getAlldish = (req, res, next) => {
     let listDish = dishModel.list();
 
-    res.render('restaurant', {
+    res.render('restaurant_detail', {
         listDish
     })
 }
+
 module.exports.rating = (req, res, next) => {
     if (req.session.isAuth === false) {
         res.render("auth/login", {

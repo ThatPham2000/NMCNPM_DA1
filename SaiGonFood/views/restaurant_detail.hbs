@@ -2,8 +2,8 @@
 			================================================== -->
 <section class="page-banner-section">
     <div class="container">
-        <h1>Our Menu 1</h1>
-        <span>good food fresh ingredients</span>
+        <h1>Quán ăn</h1>
+        <span>Thông tin chi tiết quán ăn</span>
     </div>
 </section>
 <!-- End page-banner section -->
@@ -12,7 +12,8 @@
 <div class="container">
     <ul class="page-ban-list">
         <li><a href="/index">Home</a></li>
-        <li><a href="/restaurant">Our Menu 1</a></li>
+        <li><a href="/restaurants">Danh sách quán ăn</a></li>
+        <li><a href="/restaurant_detail">Quán ăn</a></li>
     </ul>
 </div>
 <!-- end page-ban-list -->
@@ -22,10 +23,25 @@
 <section class="menu-section">
     <div class="menu-box pizza-menu">
         <div class="container">
-            <div class="title-section">
-                <h2>Restaurant</h2>
-                <span>Try the delicious new dishes from our chef.</span>
+            
+
+            <div class="row pb-5">
+                <div class="col-6">
+                    <img src="/upload/menu/banh_mi_pewpew.png" alt="">
+                </div>
+                <div class="col-6">
+                    <h2>Bánh mì PEWPEW</h2>
+                    <p><span>Vị trí: </span>66 Út Tịch, P. 4, Quận Tân Bình, TP. HCM</p>
+                    <p><span>Thời gian mở cửa:</span> 06:00 - 23:00</p>
+                    <p><span>Giá cả dao động: </span>20.000đ - 30.000đ</p>
+                </div>
             </div>
+
+            <div class="title-section">
+                <h2>Thực đơn</h2>
+                <span>Danh sách các món ăn có trong quán.</span>
+            </div>
+
             <div class="row">
                 {{#if msg}}
                 <h1 class="text-center">{{msg}}</h1>
