@@ -26,6 +26,11 @@
                 <h2>Restaurant</h2>
                 <span>Try the delicious new dishes from our chef.</span>
             </div>
+            {{#if checkSearchpage}}
+                <div class="row">
+                    <h3>Kết quả tìm kiếm:</h3>
+                </div>
+            {{/if}}
             <div class="row">
                 {{#if msg}}
                 <h1 class="text-center">{{msg}}</h1>

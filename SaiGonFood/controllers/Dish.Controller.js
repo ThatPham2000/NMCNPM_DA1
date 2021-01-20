@@ -28,8 +28,10 @@ module.exports.search = (req, res, next) => {
     });
     console.log(`data: ${data}`);
     if (data.length > 0) {
-        res.render('restaurant', { listDish: data });
-    } else {
+        checkRestaurantpage: true,
+        res.render('restaurant', { listDish: data, checkSearchpage: true });
+    }
+    else {
         res.render('restaurant', { msg: "Không tìm thấy món ăn nào!" });
     }
 }
