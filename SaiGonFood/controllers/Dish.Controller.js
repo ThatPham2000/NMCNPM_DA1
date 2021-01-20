@@ -39,10 +39,11 @@ module.exports.search = (req, res, next) => {
 module.exports.getAlldish = (req, res, next) => {
     let listDish = dishModel.list();
 
-    res.render('restaurant', {
+    res.render('restaurant_detail', {
         listDish
     })
 }
+
 module.exports.rating = (req, res, next) => {
     if (req.session.isAuth === false) {
         res.render("auth/login", {

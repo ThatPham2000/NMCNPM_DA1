@@ -11,13 +11,10 @@ module.exports.login = async (req, res, next) => {
   req.session.isAuth=false;
   
   const user = db.get('user').find({account: account}).value();
-  console.log(user);
   req.session.authUser = user;
 
   if(!user){
-    res.render("auth/login",{
-      error: 'User does not exit'
-    });
+    res.render("auth/login");
     return;
   }
 
@@ -38,4 +35,3 @@ module.exports.register = async (req, res, next) => {
   }
     res.render("auth/register");
 };
-

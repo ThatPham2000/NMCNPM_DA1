@@ -3575,8 +3575,8 @@ left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%);
 
 .input_form {
   width: 200px;
-  margin-top: 15px;
-  padding: 10px 20px;
+  margin-top: 17px;
+  padding: 9px 20px;
   margin-left: 10px;
   border: 0.5px solid #212121;
   border-radius: 5px;

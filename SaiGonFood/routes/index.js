@@ -27,10 +27,10 @@ router.get('/contact', function(req, res, next) {
     res.render('contact');
 });
 
-router.get('/restaurant', dishController.getAlldish);
+router.get('/restaurant_detail', dishController.getAlldish);
 
-router.get('/restaurant2', function(req, res, next) {
-    res.render('restaurant2');
+router.get('/restaurants', function(req, res, next) {
+    res.render('restaurants');
 });
 
 router.get('/search', dishController.search)
